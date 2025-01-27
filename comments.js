@@ -1,23 +1,14 @@
 // create web server
 const express = require('express');
 const app = express();
+const port = 3000;
 
-// create route
-app.get('/', (req, res) => {
-  res.send('Hello World');
-});
-
-// create route with parameter
-app.get('/comments/:id', (req, res) => {
-  res.send('Comment ID: ' + req.params.id);
-});
-
-// create route with query parameter
+// create a route
 app.get('/comments', (req, res) => {
-  res.send('Comment ID: ' + req.query.id);
+    res.send('Comments');
 });
 
-// start server
-app.listen(3000, () => {
-  console.log('Server is running on http://localhost:3000');
+// start the server
+app.listen(port, () => {
+    console.log(`Server is running on http://localhost:${port}`);
 });
